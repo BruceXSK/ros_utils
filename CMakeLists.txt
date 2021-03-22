@@ -137,6 +137,7 @@ INCLUDE_DIRECTORIES(
 ## The recommended prefix ensures that target names across packages don't collide
 ADD_EXECUTABLE(pose_publisher src/pose_publisher.cpp)
 ADD_EXECUTABLE(laser2pc_node src/laser2pc_node.cpp)
+ADD_EXECUTABLE(path_creator src/path_creator.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -153,6 +154,9 @@ TARGET_LINK_LIBRARIES(pose_publisher
                       ${catkin_LIBRARIES}
                       )
 TARGET_LINK_LIBRARIES(laser2pc_node
+                      ${catkin_LIBRARIES}
+                      )
+TARGET_LINK_LIBRARIES(path_creator
                       ${catkin_LIBRARIES}
                       )
 
