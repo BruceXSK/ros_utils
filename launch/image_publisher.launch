@@ -1,0 +1,11 @@
+<launch>
+    <node pkg="ros_utils" type="image_publisher" name="camera_0">
+        <param name="port" value="/dev/video0"/>
+    </node>
+    <node pkg="ros_utils" type="image_publisher" name="camera_2">
+        <param name="port" value="/dev/video2"/>
+    </node>
+    <node pkg="ros_utils" type="image_publisher" name="camera_4">
+        <param name="port" value="/dev/video4"/>
+    </node>
+</launch>

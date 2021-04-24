@@ -13,6 +13,8 @@ FIND_PACKAGE(catkin REQUIRED COMPONENTS
              std_msgs
              tf
              laser_geometry
+             cv_bridge
+             image_transport
              )
 
 ## System dependencies are found with CMake's conventions
@@ -138,6 +140,7 @@ INCLUDE_DIRECTORIES(
 ADD_EXECUTABLE(pose_publisher src/pose_publisher.cpp)
 ADD_EXECUTABLE(laser2pc_node src/laser2pc_node.cpp)
 ADD_EXECUTABLE(path_creator src/path_creator.cpp)
+ADD_EXECUTABLE(image_publisher src/image_publisher.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -159,7 +162,9 @@ TARGET_LINK_LIBRARIES(laser2pc_node
 TARGET_LINK_LIBRARIES(path_creator
                       ${catkin_LIBRARIES}
                       )
-
+TARGET_LINK_LIBRARIES(image_publisher
+                      ${catkin_LIBRARIES}
+                      )
 #############
 ## Install ##
 #############
