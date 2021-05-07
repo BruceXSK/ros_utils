@@ -113,19 +113,18 @@ private:
                 auto y2 = pose.pose.position.y;
 
                 auto dis = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
-                size_t n = dis / _resolution;
+                auto n = size_t(dis / _resolution);
 
-                auto dx = (x2 - x1) / n;
-                auto dy = (y2 - y1) / n;
+                auto dx = (x2 - x1) / double(n);
+                auto dy = (y2 - y1) / double(n);
 
                 for (size_t i = 0; i < n + 1; i++)
-                    path.poses.emplace_back(genPose(x1 + dx * i, y1 + dy * i));
+                    path.poses.emplace_back(genPose(x1 + dx * double(i), y1 + dy * double(i)));
             }
         }
 
         _pathPub.publish(path);
         _keyPoses.clear();
-
     }
 };
 
