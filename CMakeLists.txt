@@ -16,7 +16,6 @@ FIND_PACKAGE(catkin REQUIRED COMPONENTS
              cv_bridge
              image_transport
              )
-FIND_PACKAGE(OpenCV REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -165,7 +164,6 @@ TARGET_LINK_LIBRARIES(path_creator
                       )
 TARGET_LINK_LIBRARIES(image_publisher
                       ${catkin_LIBRARIES}
-                      ${OpenCV_LIBS}
                       )
 #############
 ## Install ##
