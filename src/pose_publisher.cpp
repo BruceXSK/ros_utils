@@ -25,7 +25,7 @@ int main(int argc, char **argv)
         bool tf_ok = true;
         try
         {
-            tfListener.lookupTransform("/map", "/base_link", ros::Time(0), transform);
+            tfListener.lookupTransform("map", "base_link", ros::Time(0), transform);
         }
         catch (exception &e)
         {
