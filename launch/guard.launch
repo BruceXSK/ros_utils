@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="ros_utils" type="guard_demo" name="guard_demo" output="screen"/>
+    <node pkg="ros_utils" type="guard_node" name="guard_node" required="true" output="screen"/>
+
+</launch>
