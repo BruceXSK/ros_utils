@@ -134,6 +134,8 @@ INCLUDE_DIRECTORIES(
 ## either from message generation or dynamic reconfigure
 # add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
+LINK_LIBRARIES(${catkin_LIBRARIES})
+
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
@@ -141,6 +143,8 @@ ADD_EXECUTABLE(pose_publisher src/pose_publisher.cpp)
 ADD_EXECUTABLE(laser2pc_node src/laser2pc_node.cpp)
 ADD_EXECUTABLE(path_creator src/path_creator.cpp)
 ADD_EXECUTABLE(image_publisher src/image_publisher.cpp)
+ADD_EXECUTABLE(guard_node src/guard_node.cpp)
+ADD_EXECUTABLE(guard_demo src/guard_demo.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -153,18 +157,7 @@ ADD_EXECUTABLE(image_publisher src/image_publisher.cpp)
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-TARGET_LINK_LIBRARIES(pose_publisher
-                      ${catkin_LIBRARIES}
-                      )
-TARGET_LINK_LIBRARIES(laser2pc_node
-                      ${catkin_LIBRARIES}
-                      )
-TARGET_LINK_LIBRARIES(path_creator
-                      ${catkin_LIBRARIES}
-                      )
-TARGET_LINK_LIBRARIES(image_publisher
-                      ${catkin_LIBRARIES}
-                      )
+
 #############
 ## Install ##
 #############
