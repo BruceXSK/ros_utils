@@ -20,7 +20,7 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "guard_node");
     ros::NodeHandle nh("~");
 
-    auto killSub = nh.subscribe("kill", 1, killCallback);
+    auto killSub = nh.subscribe("/kill", 1, killCallback);
 
     while (ros::ok() and run)
     {
@@ -29,3 +29,4 @@ int main(int argc, char **argv)
 
     return 0;
 }
+
